@@ -1,0 +1,27 @@
+.toolbarRoot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.toolbarSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbarValue {
+  min-width: 24px;
+  text-align: center;
+}
+
+.colorInput {
+  width: 40px;
+  height: 24px;
+  padding: 0;
+}
+
+.widthSlider {
+  min-width: 120px;
+}

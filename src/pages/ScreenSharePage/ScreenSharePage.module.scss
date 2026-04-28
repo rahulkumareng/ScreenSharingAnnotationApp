@@ -1,0 +1,14 @@
+.pageRoot {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.pageTitle {
+  margin: 0;
+}
+
+.helpText {
+  max-width: 960px;
+}
