@@ -10,7 +10,7 @@ import {
 const INITIAL_ANNOTATION_STATE = {
   selectedToolId: ANNOTATION_TOOL_PEN,
   strokeColorHexCode: "#ff0000",
-  strokeWidth: 3,
+  strokeWidth: 15,
   isAnnotationModeEnabled: true,
   clearVersion: 0,
 };

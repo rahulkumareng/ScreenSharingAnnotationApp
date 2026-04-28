@@ -62,8 +62,7 @@ export function ScreenShareToolbar(props) {
       <div className={toolbarStyles.toolbarSection}>
         <span>Tool</span>
         <button
-          type="button"
-          className={classNames(toolbarStyles.toolButton, {
+          className={classNames({
             [toolbarStyles.toolButtonActive]:
               selectedToolId === ANNOTATION_TOOL_PEN,
           })}
@@ -72,8 +71,7 @@ export function ScreenShareToolbar(props) {
           Pen
         </button>
         <button
-          type="button"
-          className={classNames(toolbarStyles.toolButton, {
+          className={classNames({
             [toolbarStyles.toolButtonActive]:
               selectedToolId === ANNOTATION_TOOL_HIGHLIGHTER,
           })}
@@ -82,8 +80,7 @@ export function ScreenShareToolbar(props) {
           Highlighter
         </button>
         <button
-          type="button"
-          className={classNames(toolbarStyles.toolButton, {
+          className={classNames({
             [toolbarStyles.toolButtonActive]:
               selectedToolId === ANNOTATION_TOOL_ERASER,
           })}
@@ -117,56 +114,24 @@ export function ScreenShareToolbar(props) {
       </div>
 
       <div className={toolbarStyles.toolbarSection}>
-        <button
-          type="button"
-          onClick={onToggleAnnotationMode}
-          className={classNames(toolbarStyles.toggleButton, {
-            [toolbarStyles.toggleButtonActive]: isAnnotationModeEnabled,
-          })}
-        >
+        <button onClick={onToggleAnnotationMode}>
           {isAnnotationModeEnabled
             ? "Disable annotations"
             : "Enable annotations"}
         </button>
 
-        <button
-          type="button"
-          onClick={onClearAnnotations}
-          className={toolbarStyles.secondaryButton}
-        >
-          Clear annotations
-        </button>
+        <button onClick={onClearAnnotations}>Clear annotations</button>
+      </div>
+
+      <div className={toolbarStyles.toolbarSection}>
+        <button onClick={onUndoLastAnnotation}>Undo</button>
+        <button onClick={onRedoLastAnnotation}>Redo</button>
+        <button onClick={onExportAnnotatedFrame}>Export annotated frame</button>
       </div>
 
       <div className={toolbarStyles.toolbarSection}>
         <button
-          type="button"
-          onClick={onUndoLastAnnotation}
-          className={toolbarStyles.secondaryButton}
-        >
-          Undo
-        </button>
-        <button
-          type="button"
-          onClick={onRedoLastAnnotation}
-          className={toolbarStyles.secondaryButton}
-        >
-          Redo
-        </button>
-        <button
-          type="button"
-          onClick={onExportAnnotatedFrame}
-          className={toolbarStyles.secondaryButton}
-        >
-          Export annotated frame
-        </button>
-      </div>
-
-      <div className={toolbarStyles.toolbarSection}>
-        <button
-          type="button"
           onClick={handleScreenShareClick}
-          className={toolbarStyles.primaryButton}
           disabled={isScreenShareStarting}
         >
           {isScreenShareStarting

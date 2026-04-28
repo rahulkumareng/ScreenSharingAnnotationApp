@@ -27,16 +27,9 @@ export function useScreenShare() {
   useEffect(() => {
     const videoElement = videoElementRef.current;
 
-    if (!videoElement) {
-      return;
-    }
+    if (!videoElement) return;
 
-    if (screenShareStream) {
-      videoElement.srcObject = screenShareStream;
-      videoElement.play().catch(() => {});
-    } else {
-      videoElement.srcObject = null;
-    }
+     videoElement.srcObject = screenShareStream ?? null;
   }, [screenShareStream]);
 
   const handleStartScreenShare = () => dispatch(screenShareStartRequest());
